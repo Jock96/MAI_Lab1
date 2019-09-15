@@ -45,6 +45,12 @@
                     parameter.FirstValue = "0";
                     parameter.SecondValue = "0";
                     parameter.ThirdValue = "0";
+
+                    parameter.CurrentFormat = BL.Enums.FormatType.RGB;
+
+                    parameter.LabelFirst = "R";
+                    parameter.LabelSecond = "G";
+                    parameter.LabelThrird = "B";
                 }
             }
             catch (Exception exception)

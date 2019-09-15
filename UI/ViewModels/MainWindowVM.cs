@@ -1,5 +1,8 @@
 ﻿namespace UI.ViewModels
 {
+    using BL.Constants;
+    using BL.Enums;
+    using System.Collections.Generic;
     using System.Drawing;
     using System.Windows.Media;
     using UI.Commands;
@@ -14,6 +17,7 @@
         /// </summary>
         public MainWindowVM()
         {
+            _currentFormat = FormatType.NONE;
             LoadImageCommand = new LoadImageCommand();
             ConvertImageCommand = new ConvertImageCommand();
 
@@ -27,6 +31,120 @@
 
             ChangeChannelsCommand = new ChangeChannelsCommand();
         }
+
+        #region Значение каналов текущего рисунка.
+
+        /// <summary>
+        /// Значение третьего канала.
+        /// </summary>
+        private string _thirdChannelValue;
+
+        /// <summary>
+        /// Значение третьего канала.
+        /// </summary>
+        public string ThirdChannelValue
+        {
+            get => _thirdChannelValue;
+            set
+            {
+                _thirdChannelValue = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Значение второго канала.
+        /// </summary>
+        private string _secondChannelValue;
+
+        /// <summary>
+        /// Значение второго канала.
+        /// </summary>
+        public string SecondChannelValue
+        {
+            get => _secondChannelValue;
+            set
+            {
+                _secondChannelValue = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Значение первого канала.
+        /// </summary>
+        private string _firstChannelValue;
+
+        /// <summary>
+        /// Значение первого канала.
+        /// </summary>
+        public string FirstChannelValue
+        {
+            get => _firstChannelValue;
+            set
+            {
+                _firstChannelValue = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
+        #region Работа с форматами.
+
+        /// <summary>
+        /// Варианты конвертации.
+        /// </summary>
+        public List<string> ConverterVariations { get; set; } =
+            new List<string> {
+                ConverterVariationConstants.RGB_TO_YUV,
+                ConverterVariationConstants.YUV_TO_RGB,
+                ConverterVariationConstants.RGB_TO_HSL,
+                ConverterVariationConstants.HSL_TO_RGB };
+
+        /// <summary>
+        /// Выбранный вариант конвертации.
+        /// </summary>
+        public string ConvertVariable { get; set; }
+
+        /// <summary>
+        /// Описание текущего формата.
+        /// </summary>
+        private string _currentFormatDescription;
+
+        /// <summary>
+        /// Описание текущего формата.
+        /// </summary>
+        public string CurrentFormatDescription
+        {
+            get => _currentFormatDescription;
+            set
+            {
+                _currentFormatDescription = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Тип текущего формата.
+        /// </summary>
+        private FormatType _currentFormat;
+
+        /// <summary>
+        /// Тип текущего формата.
+        /// </summary>
+        public FormatType CurrentFormat
+        {
+            get => _currentFormat;
+            set
+            {
+                _currentFormat = value;
+                _currentFormatDescription = _currentFormat.ToString();
+                OnPropertyChanged(nameof(CurrentFormatDescription));
+            }
+        }
+
+        #endregion
 
         /// <summary>
         /// Изменение первого канала.

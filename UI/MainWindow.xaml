@@ -83,5 +83,59 @@
                Content="{Binding ThirdValue}"
                Opacity="0.5" Background="White"
                HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="2" Margin="5, 2.5" IsReadOnly="True"
+                  ItemsSource="{Binding ConverterVariations}"
+                  HorizontalContentAlignment="Center"
+                  VerticalContentAlignment="Center"
+                  Opacity="0.5" Text="{Binding ConvertVariable}"/>
+        <Grid Grid.Row="1" Margin="5" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.4*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Текущий формат:" Background="AliceBlue"
+                   Opacity="0.75"/>
+            <Label Grid.Column="1" Background="AliceBlue" Opacity="0.75"
+                Content="{Binding CurrentFormatDescription}"/>
+            <!--<Grid Grid.Row="1" Grid.Column="0"
+                  Grid.RowSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Content="{Binding LabelFirst}"
+                       Background="AliceBlue" Opacity="0.75" HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"/>
+                <Label Grid.Column="0" Grid.Row="1" Content="{Binding LabelSecond}"
+                       Background="AliceBlue" Opacity="0.75" HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"/>
+                <Label Grid.Column="0" Grid.Row="2" Content="{Binding LabelThrird}"
+                       Background="AliceBlue" Opacity="0.75" HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"/>
+                --><!--Values--><!--
+                <Label Grid.Column="1" Grid.Row="0" Content="{Binding FirstChannelValue}"
+                       Background="AliceBlue" Opacity="0.75" HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"/>
+                <Label Grid.Column="1" Grid.Row="1" Content="{Binding SecondChannelValue}"
+                       Background="AliceBlue" Opacity="0.75" HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"/>
+                <Label Grid.Column="1" Grid.Row="2" Content="{Binding ThirdChannelValue}"
+                       Background="AliceBlue" Opacity="0.75" HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"/>
+                --><!--Values--><!--
+            </Grid>-->
+        </Grid>
     </Grid>
 </Window>
